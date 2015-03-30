@@ -33,6 +33,7 @@ In this case instead of using it as an interface it was used as a trait which wa
 |Average|98|89|
 
 Lines of Code is fairly similar however, I didn't dig deep into scala to use the functional portions. I stuck to imperative because I knew it well.
+
 Average is close at 98 vs 89 for Scala and java. If i had changed to functional I think scala would have been MUCH smaller codebase.
 
 ###Runtime Errors vs Compile Errors
@@ -46,35 +47,47 @@ Average is close at 98 vs 89 for Scala and java. If i had changed to functional 
 |Quick Sort Compile Errors| 8 | 7 |
 
 In general I had ALOT more trouble with scala because I don't know the language well enough.
+
 In each the longest time was taken getting everything up and running which started with Bubblesort in Java.
+
 In general I find mergesort has the most room for errors. Quick sort is much easier to implement.
+
 The area that gave me the most trouble in each language was figuring out generics and the package structure.
+
 Java was failry straight forward and running ```javac Main.java``` recursively went out and compiled all the packages.
+
 In Scala, you had to run ```scalac Main.scala /bubblesort/Sort.scala ...``` this was a huge pain in the butt to realize.
 
 ###Performance
 As you can see below, java was actually faster than scala in all the tests I ran.
+
 I believe this has to do with java's maturity and the fact that I used mainly an imperative approach which is not scala's strong suite.
+
 Doing this all in functional vs imperative I expect scala to come out on top.
 
 I did ```10, 50, 300, 100, 200, 500, 700, 1000``` for the list sizes, running each case 15 times.
 The 2 norm was taken of each case of String, Integer, and Int, Ascending, and Descending to get a rough average.
 
 ###Overall Programming Experience
+
 Even though I've been using Java alot, I really enjoyed Scala. In my group of friends, nobody liked Scala, however I may be biased.
 My favorite parts of Scala are:
+
 * ```object``` symbol makes a singleton. Very fast and simple. 
 * for loops with ```i <- 0 until array.length``` is very welcome and easy to read
 * Being able to dip into functional when required.
 * Having a mutable vs immutable versions of each collection type is amazing for concurrency
 
 Least Favorite Part is the Compile Time.
+
 Holy smokes, only using 4 files it took about 3-4 seconds to compile. I'm scaled of what it might take when scaling up to a bigger project.
+
 I know sbt has an incremental build daemon but doing it without any tools seems nuts.
+
 2nd least favorite is the crazy symbols. Different objects have different converstions. 
-Example:
-76.toString
-SomeClass.toString()
+
+Example:```76.toString``` vs ```SomeClass.toString()```
+
 
 One is a function the other is a member variable..
 
