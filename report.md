@@ -61,6 +61,8 @@ In Scala, you had to run ```scalac Main.scala /bubblesort/Sort.scala ...``` this
 ###Performance
 As you can see below, java was actually faster than scala in all the tests I ran.
 
+![Performance Plot Java vs Scala](https://github.com/ObjectiveTruth/ScalaJavaSortComparison/raw/master/Assignment3_performance_plot.jpg)
+
 I believe this has to do with java's maturity and the fact that I used mainly an imperative approach which is not scala's strong suite.
 
 Doing this all in functional vs imperative I expect scala to come out on top.
