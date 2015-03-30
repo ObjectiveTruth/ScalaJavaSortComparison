@@ -1,0 +1,25 @@
+#!/bin/bash
+clear
+if scalac Main.scala bubblesort/Sort.scala mergesort/Sort.scala quicksort/Sort.scala; then
+    if scala Main; then
+        exit 0;
+    else
+        if [ ! -f *.rec ]; then
+            touch 1.rec && echo "Starting Runtime Error File at 1"
+        else
+            recs=(*.rec)
+            num="$(basename $recs .rec)"
+            mv $recs $((num +1)).rec
+            echo "You're up to $((num +1)) runtime errors"
+        fi
+    fi
+else
+    if [ ! -f *.cec ]; then
+        touch 1.cec && echo "Starting Compile Error File at 1"
+    else
+        cecs=(*.cec)
+        num="$(basename $cecs .cec)"
+        mv $cecs $((num +1)).cec
+        echo "You're up to $((num +1)) compile errors"
+    fi
+fi
