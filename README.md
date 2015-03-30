@@ -1,4 +1,4 @@
-#Assignemtn 3 - Programming Languages
+#Assignment 3 - Programming Languages
 by Jose Miguel Mendez
 
 ##Language Discussion
