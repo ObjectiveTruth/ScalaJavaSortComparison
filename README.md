@@ -37,14 +37,14 @@ Lines of Code is fairly similar however, I didn't dig deep into scala to use the
 Average is close at 98 vs 89 for Scala and java. If i had changed to functional I think scala would have been MUCH smaller codebase.
 
 ###Runtime Errors vs Compile Errors
-|   |Scala|Java|
-|---|-----|----|
-|Bubble Sort Runtime Errors| 6  | 9 |   0|
+|   |Scala|Java|Clojure|
+|---|-----|----|----|
+|Bubble Sort Runtime Errors| 6  | 9 |    0|
 |Bubble Sort Compile Errors| 127 | 98|  92|
-|Merge Sort Runtime Errors| 0 | 26 |
-|Merge Sort Compile Errors| 69 | 28 |
-|Quick Sort Runtime Errors| 0 | 1 |
-|Quick Sort Compile Errors| 8 | 7 |
+|Merge Sort Runtime Errors| 0 | 26 |    10|
+|Merge Sort Compile Errors| 69 | 28 |    6|
+|Quick Sort Runtime Errors| 0 | 1 |      1|
+|Quick Sort Compile Errors| 8 | 7 |      8|
 
 In general I had ALOT more trouble with scala because I don't know the language well enough.
 

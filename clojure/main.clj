@@ -3,6 +3,7 @@
 
 (require `[bubblesort.sort])
 (require `[mergesort.sort])
+(require `[quicksort.sort])
 (require `[helper])
 
 (def sequenceSize 10)
@@ -31,7 +32,7 @@
 )
 
 (helper/printPretty
-  (bubble.sort/sortMe unsortedInts intFloatComparatorAscending)
+ (bubble.sort/sortMe unsortedInts intFloatComparatorAscending)
   (bubble.sort/sortMe unsortedFloats intFloatComparatorAscending)
   (bubble.sort/sortMe unsortedStrings stringComparatorAscending)
   "Bubblesort Ascending"
@@ -51,4 +52,23 @@
   "Mergesort Ascending"
 )
 
+(helper/printPretty
+  (merge.sort/sortMe unsortedInts intFloatComparatorDescending)
+  (merge.sort/sortMe unsortedFloats intFloatComparatorDescending)
+  (merge.sort/sortMe unsortedStrings stringComparatorDescending)
+  "Mergesort Descending"
+)
 
+(helper/printPretty
+  (quick.sort/sortMe unsortedInts intFloatComparatorAscending)
+  (quick.sort/sortMe unsortedFloats intFloatComparatorAscending)
+  (quick.sort/sortMe unsortedStrings stringComparatorAscending)
+  "Quicksort Ascending"
+)
+
+(helper/printPretty
+  (quick.sort/sortMe unsortedInts intFloatComparatorDescending)
+  (quick.sort/sortMe unsortedFloats intFloatComparatorDescending)
+  (quick.sort/sortMe unsortedStrings stringComparatorDescending)
+  "Quicksort Descending"
+)

@@ -1,22 +1,37 @@
 (ns merge.sort)
 
-(defn swap [v i1 i2] 
-     (assoc v i2 (v i1) i1 (v i2)))
+(defn split-at-vec [mid splitme]
+      [(subvec splitme 0 mid) (subvec splitme mid)])
+
+(defn mergestep [leftside rightside sorted customComparator]
+  (if 
+    (and (not (empty? leftside)) (not (empty? rightside)))
+    (if 
+      (> (customComparator (first leftside) (first rightside)) 0)
+      (mergestep 
+        (subvec leftside 1) 
+        rightside 
+        (into [] (conj sorted (first leftside)))
+        customComparator)
+      (mergestep 
+        (subvec rightside 1) 
+        leftside 
+        (into [] (conj sorted (first rightside)))
+        customComparator))
+    (into [] (concat sorted leftside rightside))))
+
+(defn mergesort [sorting customComparator]
+  (if (> (count sorting) 1)
+    (let [sides (split-at-vec (/ (count sorting) 2) sorting)] 
+      (mergestep 
+        (mergesort (get sides 0) customComparator)
+        (mergesort (get sides 1) customComparator) 
+        []
+        customComparator))
+    sorting
+  )
+)
 
 (defn sortMe [unsortedVec customComparator] 
-  (loop [i 0
-         sorted true
-         sorting unsortedVec
-        ]
-    (if (< (inc i) (count unsortedVec))    
-      (if (< (customComparator (nth sorting i) (nth sorting (inc i))) 0)
-        (recur (inc i) false (swap sorting i (inc i)))
-        (recur (inc i) sorted sorting)
-      )
-      (if (true? sorted)
-        sorting
-        (recur 0 true sorting)
-      )
-    )
-  )
+  (mergesort unsortedVec customComparator)
 )
