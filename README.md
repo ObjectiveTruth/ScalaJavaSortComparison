@@ -97,6 +97,17 @@ Doing this all in functional vs imperative I expect scala to come out on top.
 I did ```10, 50, 300, 100, 200, 500, 700, 1000``` for the list sizes, running each case 15 times.
 The 2 norm was taken of each case of String, Integer, and Int, Ascending, and Descending to get a rough average.
 
+![Performance Plot Clojure](https://github.com/ObjectiveTruth/ScalaJavaSortComparison/raw/master/clojuresortgraph.jpg)
+
+**Clojure's** graph is really interesting. Unfortunately I formatted my computer for Linux, so I lost the original matlab files but comparing the 2 graphs (convert from ms to nanoseconds) we can see an interesting trend:
+
+* Scala is by far the slowest in all sorts
+* Java is the absolute fastest
+* Clojure is right in the middle
+
+Interestingly however, they all converge to around 400 milliseconds for mergesort and quicksort. The biggest difference is in bubble sort where Java kills it.
+
+However, for developer time, clojure should be the lowest on the graph. Its up to the developer to weight the tradeoffs of developer time vs performance.
 
 ###Overall Programming Experience
 
