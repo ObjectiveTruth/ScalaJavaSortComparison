@@ -1,4 +1,5 @@
 #Assignment 3 - Programming Languages
+##Scala, Java, and **Clojure**
 by Jose Miguel Mendez
 
 ##Language Discussion
@@ -22,22 +23,40 @@ Leanring about Manifests made it simple to create an object and even get the nam
 * The 3 test comparators for String, Float and Integer were inherited from Java.util.Comparator.
 In this case instead of using it as an interface it was used as a trait which was much easier to work with. I found out that in the back end its all interfaces but still nice.
 
+###**Clojure**
+
+* Polymorphism was ridiculously easy in **Clojure**. I didn't even think about it until this question. Dynamic typing is already performed so well.
+
+* The compiler took care of evertyhing and working with multiple classes was so simple it felt like cheating.
+Most of the datatypes are already supported with the ```(compare x y)``` macro.
+Reading the documentation actually suggested NOT using a comparator.
+[**Clojure** compare example](https://clojuredocs.org/clojure.core/comparator)
+Interestingly **Clojure** has a built-in macro for creating ```comparators```. Just supply the predicate in the call ```(comparator pred)```.
+
+
 ##Metrics
 ###Lines of Code
-|   |Scala|Java|
-|---|-----|----|
-|Bubblesort|50|48|
-|MergeSort|96|79|
-|QuickSort|95|86|
-|Main|155|146|
-|Average|98|89|
+|   |Scala|Java|**Clojure**|
+|---|-----|----|----|
+|Bubblesort|50|48|22|
+|MergeSort|96|79|37|
+|QuickSort|95|86|42|
+|Main|155|146|111|
+|Average|98|89|53|
 
-Lines of Code is fairly similar however, I didn't dig deep into scala to use the functional portions. I stuck to imperative because I knew it well.
+Lines of Code is fairly similar for Scala and Java however, I didn't dig deep into scala to use the functional portions. I stuck to imperative because I knew it well.
 
-Average is close at 98 vs 89 for Scala and java. If i had changed to functional I think scala would have been MUCH smaller codebase.
+The biggest difference is **Clojure** with almost half the lines of code required.
+There is however a little biase because I did a better job of refactoring after reading **Clean Code** by Robert Cecil Martin. 
+
+Completely changed the way I write code.
+
+But still, half is insane; I :heart: **Clojure**.
+
+The average is close at 98 vs 89 for Scala and java but half for **Clojure** with arguably cleaner and more extendable functionality.
 
 ###Runtime Errors vs Compile Errors
-|   |Scala|Java|Clojure|
+|   |Scala|Java|**Clojure**|
 |---|-----|----|----|
 |Bubble Sort Runtime Errors| 6  | 9 |    0|
 |Bubble Sort Compile Errors| 127 | 98|  92|
@@ -58,6 +77,14 @@ Java was failry straight forward and running ```javac Main.java``` recursively w
 
 In Scala, you had to run ```scalac Main.scala /bubblesort/Sort.scala ...``` this was a huge pain in the butt to realize.
 
+**Clojure** is undoubtedly the easiest to work with once you get past the rough points.
+Its tough to say because we've done this now 3 times, so each time you get better.
+However, **Clojure** was definately easier on paper.
+
+The main difference in using **Clojure** is you spend alot of time starring at the screen and less time writing, which I dont know if is good or bad. 
+
+Its tough to show someone what you've done when there isn't alot of code written.
+
 ###Performance
 As you can see below, java was actually faster than scala in all the tests I ran.
 
@@ -69,6 +96,7 @@ Doing this all in functional vs imperative I expect scala to come out on top.
 
 I did ```10, 50, 300, 100, 200, 500, 700, 1000``` for the list sizes, running each case 15 times.
 The 2 norm was taken of each case of String, Integer, and Int, Ascending, and Descending to get a rough average.
+
 
 ###Overall Programming Experience
 
@@ -93,6 +121,26 @@ Example:```76.toString``` vs ```SomeClass.toString()```
 
 One is a function the other is a member variable..
 
-Overall very interesting languages
+**Clojure** is still fairly new to me but I did use it alot earlier in the year.
+You really have to work at it to be able to think like a functional programmer.
+Having to context switch between imperative and functional is really tough.
 
+What I'm suprised is how quickly I did it even still. I had alot of frustration but the previous assignment took me 2-3 days of solid work. **Clojure** took a day even with all the frustration.
 
+If i had to choose a language to rapidly prototype in, **Clojure** would be number 1 :point_up:.
+
+Favorite parts of **Clojure**:
+
+* Almost no boiler plate, no creating objects everywhere
+
+* Functional programming forces you to think cleanly (almost annoyingly so..)
+
+* Macros are so handy, anything that manipulates lists can be done in 1-2 functions
+
+* Being able to show your friends that their 50 line java program can be done in 3-4 lines in **Clojure**.
+
+Least Favorite parts of **Clojure**:
+
+* Brackets...vim-fireplace helps but very annoying to quickly add a function
+
+**Clojure**! its the future
