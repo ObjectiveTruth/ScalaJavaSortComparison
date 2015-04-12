@@ -39,8 +39,8 @@ Average is close at 98 vs 89 for Scala and java. If i had changed to functional 
 ###Runtime Errors vs Compile Errors
 |   |Scala|Java|
 |---|-----|----|
-|Bubble Sort Runtime Errors| 6  | 9 |
-|Bubble Sort Compile Errors| 127 | 98|
+|Bubble Sort Runtime Errors| 6  | 9 |   0|
+|Bubble Sort Compile Errors| 127 | 98|  92|
 |Merge Sort Runtime Errors| 0 | 26 |
 |Merge Sort Compile Errors| 69 | 28 |
 |Quick Sort Runtime Errors| 0 | 1 |

@@ -1,0 +1,14 @@
+#!/bin/bash
+clear
+if ./clj main.clj; then
+    exit 0;
+else
+    if [ ! -f *.rec ]; then
+        touch 1.rec && echo "Starting Runtime Error File at 1"
+    else
+        recs=(*.rec)
+        num="$(basename $recs .rec)"
+        mv $recs $((num +1)).rec
+        echo "You're up to $((num +1)) runtime errors"
+    fi
+fi
